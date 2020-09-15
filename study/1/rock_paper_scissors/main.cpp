@@ -1,5 +1,4 @@
-
-#include <iostream>
+ï»¿#include <iostream>
 #include <cstdlib>
 #include <ctime>
 #include <string>
@@ -70,17 +69,17 @@ string card_to_string(Card card)
     switch (card)
     {
     case Card::Scissors:
-        return "°¡À§";
+        return "ê°€ìœ„";
     case Card::Rock:
-        return "¹ÙÀ§";
+        return "ë°”ìœ„";
     case Card::Paper:
-        return "º¸";
+        return "ë³´";
     }
 
     return "";
 }
 
-//c1°ú c2¸¦ ºñ±³ÇÏ¿© c1À» ±âÁØÀ¸·Î ½ÂºÎ°á°ú ¹İÈ¯
+//c1ê³¼ c2ë¥¼ ë¹„êµí•˜ì—¬ c1ì„ ê¸°ì¤€ìœ¼ë¡œ ìŠ¹ë¶€ê²°ê³¼ ë°˜í™˜
 GameResult compare_card(Card c1, Card c2)
 {
     if (c1 == c2)
@@ -112,8 +111,8 @@ int main()
 
     while (true)
     {
-        cout << "°¡À§¹ÙÀ§º¸! ¹«¾ùÀ» ³¾°Ç°¡¿ä?" << endl;
-        cout << "1. °¡À§, 2. ¹ÙÀ§, 3. º¸" << endl;
+        cout << "ê°€ìœ„ë°”ìœ„ë³´! ë¬´ì—‡ì„ ë‚¼ê±´ê°€ìš”?" << endl;
+        cout << "1. ê°€ìœ„, 2. ë°”ìœ„, 3. ë³´" << endl;
         cout << "> ";
 
         int input = 0;
@@ -121,32 +120,32 @@ int main()
 
         player->set_card_of_turn(static_cast<Card>(input - 1));
         Sleep(1000);
-        cout << "°¡À§...";
+        cout << "ê°€ìœ„...";
         Sleep(1000);
-        cout << "¹ÙÀ§...";
+        cout << "ë°”ìœ„...";
         Sleep(1000);
-        cout << "º¸!" << endl;
+        cout << "ë³´!" << endl;
         Sleep(1000);
         ai->set_random_card_of_turn();
 
-        cout << "ÇÃ·¹ÀÌ¾î : " << card_to_string(player->get_card_of_turn()) << endl;
-        cout << "ÄÄÇ»ÅÍ : " << card_to_string(ai->get_card_of_turn()) << endl;
+        cout << "í”Œë ˆì´ì–´ : " << card_to_string(player->get_card_of_turn()) << endl;
+        cout << "ì»´í“¨í„° : " << card_to_string(ai->get_card_of_turn()) << endl;
 
         GameResult result = compare_card(player->get_card_of_turn(), ai->get_card_of_turn());
         switch (result)
         {
         case GameResult::Win:
-            cout << "½Â!";
+            cout << "ìŠ¹!";
             break;
         case GameResult::Lose:
-            cout << "ÆĞ¹è...";
+            cout << "íŒ¨ë°°...";
             break;
         case GameResult::Draw:
-            cout << "ºñ°å½À´Ï´Ù.";
+            cout << "ë¹„ê²¼ìŠµë‹ˆë‹¤.";
             break;
         }
         cout << "\n\n";
-        cout << "´Ù½Ã ÇÏ½Ã°Ú½À´Ï±î? (y/n)" << endl
+        cout << "ë‹¤ì‹œ í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (y/n)" << endl
             << "> ";
         string retry;
         getline(cin, retry);
