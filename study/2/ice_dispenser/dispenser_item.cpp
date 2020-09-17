@@ -2,6 +2,10 @@
 
 DispenserItem::DispenserItem()
 {
+    name = "Unknown";
+    price = 0;
+    count = 0;
+    enable = false;
 }
 
 DispenserItem::DispenserItem(string name, int price, int count, bool enable)
