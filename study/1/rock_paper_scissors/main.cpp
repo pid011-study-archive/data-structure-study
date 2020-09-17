@@ -1,27 +1,16 @@
-﻿#include <iostream>
+﻿#include <Windows.h>
 #include <cstdlib>
 #include <ctime>
+#include <iostream>
 #include <string>
-#include <Windows.h>
 
 using namespace std;
 
-enum class Card
-{
-    Scissors,
-    Rock,
-    Paper
-};
+enum class Card { Scissors, Rock, Paper };
 
-enum class GameResult
-{
-    Win,
-    Lose,
-    Draw
-};
+enum class GameResult { Win, Lose, Draw };
 
-class Game
-{
+class Game {
 public:
     Card get_card_of_turn();
 
@@ -29,45 +18,37 @@ protected:
     Card turn;
 };
 
-Card Game::get_card_of_turn()
-{
+Card Game::get_card_of_turn() {
     return this->turn;
 }
 
-class GameAI : public Game
-{
+class GameAI : public Game {
 public:
     GameAI();
     void set_random_card_of_turn();
 };
 
-GameAI::GameAI()
-{
+GameAI::GameAI() {
     srand((unsigned)time(NULL));
 }
 
-void GameAI::set_random_card_of_turn()
-{
-    int r = rand() % 3;
+void GameAI::set_random_card_of_turn() {
+    int r       = rand() % 3;
     Card result = static_cast<Card>(r);
-    this->turn = result;
+    this->turn  = result;
 }
 
-class Player : public Game
-{
+class Player : public Game {
 public:
     void set_card_of_turn(Card playerCard);
 };
 
-void Player::set_card_of_turn(Card playerCard)
-{
+void Player::set_card_of_turn(Card playerCard) {
     this->turn = playerCard;
 }
 
-string card_to_string(Card card)
-{
-    switch (card)
-    {
+string card_to_string(Card card) {
+    switch (card) {
     case Card::Scissors:
         return "가위";
     case Card::Rock:
@@ -80,16 +61,13 @@ string card_to_string(Card card)
 }
 
 //c1과 c2를 비교하여 c1을 기준으로 승부결과 반환
-GameResult compare_card(Card c1, Card c2)
-{
-    if (c1 == c2)
-    {
+GameResult compare_card(Card c1, Card c2) {
+    if (c1 == c2) {
         return GameResult::Draw;
     }
     bool result = false;
 
-    switch (c1)
-    {
+    switch (c1) {
     case Card::Scissors:
         result = c2 == Card::Paper;
         break;
@@ -104,13 +82,11 @@ GameResult compare_card(Card c1, Card c2)
     return result ? GameResult::Win : GameResult::Lose;
 }
 
-int main()
-{
-    GameAI* ai = new GameAI;
+int main() {
+    GameAI* ai     = new GameAI;
     Player* player = new Player;
 
-    while (true)
-    {
+    while (true) {
         cout << "가위바위보! 무엇을 낼건가요?" << endl;
         cout << "1. 가위, 2. 바위, 3. 보" << endl;
         cout << "> ";
@@ -132,8 +108,7 @@ int main()
         cout << "컴퓨터 : " << card_to_string(ai->get_card_of_turn()) << endl;
 
         GameResult result = compare_card(player->get_card_of_turn(), ai->get_card_of_turn());
-        switch (result)
-        {
+        switch (result) {
         case GameResult::Win:
             cout << "승!";
             break;
@@ -144,13 +119,13 @@ int main()
             cout << "비겼습니다.";
             break;
         }
+
         cout << "\n\n";
-        cout << "다시 하시겠습니까? (y/n)" << endl
-            << "> ";
+        cout << "다시 하시겠습니까? (y/n)" << endl << "> ";
         string retry;
         getline(cin, retry);
-        if (retry != "y")
-        {
+
+        if (retry != "y") {
             break;
         }
     }

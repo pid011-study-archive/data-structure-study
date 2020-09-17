@@ -1,13 +1,13 @@
-#pragma once
+﻿#pragma once
+
+#include "dispenser_item.h"
 
 #include <iostream>
-#include "dispenser_item.h"
 
 using std::cout;
 using std::endl;
 
-class IceDispenser
-{
+class IceDispenser {
 public:
     IceDispenser();
     ~IceDispenser();

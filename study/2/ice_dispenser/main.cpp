@@ -1,29 +1,29 @@
-﻿#include <iostream>
-#include "ice_dispenser.h"
+﻿#include "ice_dispenser.h"
 
-using std::cout;
+#include <iostream>
+
 using std::cin;
+using std::cout;
 using std::endl;
 
-int main()
-{
-	IceDispenser* dispenser = new IceDispenser;
-	while (true)
-	{
-		cout << "[Ice Dispenser]\n" << endl;
-		dispenser->show_items();
-		cout << "\n" << "input money > ";
-		
-		int money;
-		cin >> money;
+int main() {
+    IceDispenser* dispenser = new IceDispenser;
+    while (true) {
+        cout << "[Ice Dispenser]\n" << endl;
+        dispenser->show_items();
+        cout << "\n"
+             << "input money > ";
 
-		cout << "input number > ";
+        int money;
+        cin >> money;
 
-		int input;
-		cin >> input;
-		dispenser->select_item(input, money);
-		cout << endl;
-	}
+        cout << "input number > ";
 
-	delete dispenser;
+        int input;
+        cin >> input;
+        dispenser->select_item(input, money);
+        cout << endl;
+    }
+
+    delete dispenser;
 }
