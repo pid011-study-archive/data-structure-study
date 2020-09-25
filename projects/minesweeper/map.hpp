@@ -52,7 +52,7 @@ private:
      *
      * @param x Position x of mine to be planted
      * @param y Position y of mine to be planted
-     * @return Is mine planted
+     * @return Has mine planted
      */
     bool plant_mine(int x, int y) {
         if (is_position_in_map(x, y)) {
