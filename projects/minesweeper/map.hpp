@@ -31,7 +31,7 @@ private:
                 if (check_mine(x, y)) {
                     continue;
                 }
-                _map[y][x] = calcualte_cell(x, y);
+                _map[y][x] = calculate_cell(x, y);
             }
         }
     }
@@ -74,7 +74,7 @@ private:
      * @param y Position y
      * @return The number of mines
      */
-    int calcualte_cell(int x, int y) {
+    int calculate_cell(int x, int y) {
         int neighbor_mine = 0;
 
         for (int check_y = y - 1; check_y <= y + 1; check_y++) {
@@ -133,7 +133,7 @@ public:
     }
 
     /**
-     * @brief Returns columm of the map
+     * @brief Returns column of the map
      */
     int get_col() const {
         return _col;
