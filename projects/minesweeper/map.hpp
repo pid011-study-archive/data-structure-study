@@ -95,7 +95,8 @@ private:
     }
 
 public:
-    Map(int row, int col, int mine_count) : _row(row), _col(col), _mine_count(mine_count) {
+    Map(int row, int col, int mine_count)
+        : _row(row), _col(col), _mine_count(mine_count) {
         _map = new int*[_row];
         for (int i = 0; i < _row; i++) {
             _map[i] = new int[_col];
