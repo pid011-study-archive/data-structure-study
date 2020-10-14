@@ -1,4 +1,4 @@
-﻿#include "map.hpp"
+﻿#include "map.h"
 
 int main(int, char**) {
     Map* map = new Map(8, 8, 10);

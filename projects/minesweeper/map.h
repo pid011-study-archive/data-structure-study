@@ -7,10 +7,10 @@ class Map {
 private:
     const int _number_mine = -1;
     const char _symbol_mine = '*';
-
     const int _row;
     const int _col;
-    const int _mine_count;
+
+    int _mine_count;
     int** _map;
 
     /**

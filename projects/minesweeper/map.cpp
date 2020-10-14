@@ -1,4 +1,4 @@
-﻿#include "map.hpp"
+﻿#include "map.h"
 
 void Map::initialize_map() {
     std::random_device rd;
