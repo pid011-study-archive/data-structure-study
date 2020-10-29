@@ -27,7 +27,7 @@ void LinkedList::add_last(int data) {
 }
 
 void LinkedList::insert(int idx, int data) {
-    if (idx < 0 || idx > _count) {
+    if (idx < 0 || idx >= _count) {
         std::cout << "Index out of range!" << std::endl;
         return;
     }
