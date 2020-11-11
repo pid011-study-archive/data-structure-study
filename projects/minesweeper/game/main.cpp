@@ -1,10 +1,10 @@
-﻿#include "cursor.h"
+﻿#include <conio.h>
+#include <string>
+#include <time.h>
+#include "cursor.h"
 #include "map.h"
 #include "tile.h"
 #include "util.h"
-#include <conio.h>
-#include <string>
-#include <time.h>
 
 int main(int, char**) {
     Map* map = new Map(15, 15, 10);
@@ -62,7 +62,8 @@ int main(int, char**) {
         }
 
         // Win
-        if (map->get_opened_tile_count() == map->get_col() * map->get_row() - map->get_mine_count()) {
+        if (map->get_opened_tile_count()
+            == map->get_col() * map->get_row() - map->get_mine_count()) {
             game_end_string = "You win!";
             game_end = true;
         }

@@ -1,6 +1,7 @@
 ﻿#include "map.h"
 
-Map::Map(int row, int col, int mine_count) : _row(row), _col(col), _mine_count(mine_count), _opened_tiles(0) {
+Map::Map(int row, int col, int mine_count)
+    : _row(row), _col(col), _mine_count(mine_count), _opened_tiles(0) {
     _tiles = new Tile*[_row];
     for (int i = 0; i < _row; i++) {
         _tiles[i] = new Tile[_col];
@@ -23,7 +24,7 @@ void Map::initialize_map() {
     std::uniform_int_distribution<int> dis_row(0, _row - 1);
 
     for (int i = 0; i < _mine_count; i++) {
-        int x, y;
+        int x = 0, y = 0;
         do {
             x = dis_col(gen);
             y = dis_row(gen);

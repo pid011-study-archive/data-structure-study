@@ -10,11 +10,13 @@ void gotoxy(int x, int y) {
 }
 
 void screen_init() {
-    CONSOLE_CURSOR_INFO cci;
+    CONSOLE_CURSOR_INFO cci {};
 
     // 화면 버퍼 2개를 만든다.
-    g_hScreen[0] = CreateConsoleScreenBuffer(GENERIC_READ | GENERIC_WRITE, 0, NULL, CONSOLE_TEXTMODE_BUFFER, NULL);
-    g_hScreen[1] = CreateConsoleScreenBuffer(GENERIC_READ | GENERIC_WRITE, 0, NULL, CONSOLE_TEXTMODE_BUFFER, NULL);
+    g_hScreen[0] = CreateConsoleScreenBuffer(
+        GENERIC_READ | GENERIC_WRITE, 0, NULL, CONSOLE_TEXTMODE_BUFFER, NULL);
+    g_hScreen[1] = CreateConsoleScreenBuffer(
+        GENERIC_READ | GENERIC_WRITE, 0, NULL, CONSOLE_TEXTMODE_BUFFER, NULL);
 
     // 커서 숨기기
     cci.dwSize = 1;
@@ -25,7 +27,7 @@ void screen_init() {
 
 void screen_flipping() {
     SetConsoleActiveScreenBuffer(g_hScreen[g_nScreenIndex]);
-    g_nScreenIndex = !g_nScreenIndex;
+    g_nScreenIndex = g_nScreenIndex == 0 ? 1 : 0;
 }
 
 void screen_clear() {
