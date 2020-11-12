@@ -31,7 +31,7 @@ BreakStringLiterals: false
 ColumnLimit: 100
 CompactNamespaces: false
 ConstructorInitializerAllOnOneLineOrOnePerLine: false
-Cpp11BracedListStyle: false
+Cpp11BracedListStyle: true
 FixNamespaceComments: true
 IncludeBlocks: Merge
 IncludeCategories:
@@ -55,7 +55,7 @@ SpaceAfterCStyleCast: false
 SpaceAfterLogicalNot: false
 SpaceAfterTemplateKeyword: false
 SpaceBeforeAssignmentOperators: true
-SpaceBeforeCpp11BracedList: true
+SpaceBeforeCpp11BracedList: false
 SpaceBeforeCtorInitializerColon: true
 SpaceBeforeInheritanceColon: true
 SpaceBeforeParens: ControlStatements
