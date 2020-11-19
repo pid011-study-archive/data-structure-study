@@ -4,6 +4,7 @@
 # In Visual Studio: Format document - Ctrl+K, Ctrl+D, Format selection - Ctrl + K, Ctrl + F
 
 Language: Cpp
+BasedOnStyle: LLVM
 
 AccessModifierOffset: -4
 AlignAfterOpenBracket: AlwaysBreak
@@ -28,7 +29,7 @@ BreakBeforeTernaryOperators: true
 BreakConstructorInitializers: BeforeColon
 BreakInheritanceList: BeforeColon
 BreakStringLiterals: false
-ColumnLimit: 100
+ColumnLimit: 0
 CompactNamespaces: false
 ConstructorInitializerAllOnOneLineOrOnePerLine: false
 Cpp11BracedListStyle: true
