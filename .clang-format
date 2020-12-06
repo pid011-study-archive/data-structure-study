@@ -12,7 +12,7 @@ BreakBeforeBinaryOperators: NonAssignment
 BreakBeforeTernaryOperators: true
 ColumnLimit: 0
 CompactNamespaces: false
-Cpp11BracedListStyle: true
+Cpp11BracedListStyle: false
 FixNamespaceComments: true
 IncludeBlocks: Regroup
 IncludeCategories:
@@ -32,7 +32,7 @@ SpaceAfterCStyleCast: false
 SpaceAfterLogicalNot: false
 SpaceAfterTemplateKeyword: false
 SpaceBeforeAssignmentOperators: true
-SpaceBeforeCpp11BracedList: false
+SpaceBeforeCpp11BracedList: true
 SpaceBeforeCtorInitializerColon: true
 SpaceBeforeInheritanceColon: true
 SpaceBeforeParens: ControlStatements
